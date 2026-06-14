@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grace, Grounds & Glimpses</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(224, 247, 219, 0.95);
+    color: rgb(16, 53, 21);
+    overflow-x: hidden;
+}
+
+/* LOCK SCREEN */
+#lock {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(217, 236, 212);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+
+#lock input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    width: 200px;
+}
+
+#lock button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #1d6126;
+    color: white;
+    cursor: pointer;
+}
+
+/* HEADER */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Poppins', serif;
+    font-size: 2.8rem;
+}
+
+.subtitle {
+    opacity: 0.8;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.555);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.gallery div {
+    height: 120px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* COUNTDOWN */
+#countdown {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* BUTTON */
+button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* FADE */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lock">
+    <h2>Private Invitation</h2>
+    <p>Hint: It’s what I call you when everything feels soft and unspoken.</p>
+    <input type="password" id="pass" placeholder="Enter password"/>
+    <button onclick="unlock()">Unlock</button>
+    <p id="error" style="color:#ff6b6b;"></p>
+</div>
+
+<header>
+    <h1>Grace, Grounds & Glimpses</h1>
+    <p class="subtitle">A Formal Invitation for Akira Rhien Karunungan Llave</p>
+    <p class="subtitle">July 12, 2026</p>
+    <div id="countdown"></div>
+</header>
+
+<section class="fade">
+    <div class="card">
+        <h2>My Dearest, Akira Rhien Karunungan Llave.</h2>
+        <p>
+            This isn’t just an invitation. It’s a promise wrapped in intention.
+            You already said yes, but I still wanted this moment to feel official—
+            like something worth remembering even before it begins.
+        </p>
+
+        <p>
+            On July 12, we don’t just go somewhere. We step into Grace, into Grounds, into Glimpses—
+            three quiet chapters of a day I hope becomes one of our softest memories. Each moment is carefully thought through, not because I'm trying to impress you, but because you deserve to feel how deeply I want to know you.
+        </p>
+
+        <p>
+            And if I'm being honest… I just like making space for you in things I build. Every detail here is a reflection of the small ways I've learned what makes you feel safe, seen, and cherished. From the simplest conversation to the quietest glances, I want to create something that feels as genuine as what we're building together.
+        </p>
+
+        <p>
+            This day will be ours—no rush, no pressure, just presence. I hope the spaces we share together feel like home, like breathing easier, like exactly where we're meant to be. Whatever unfolds, I'm grateful for the chance to build more memories with you.
+        </p>
+
+        <p>
+            Always learning you,  
+            <br>— Keziah
+        </p>
+    </div>
+</section>
+
+<section class="fade">
+    <div class="card">
+        <h2>Grace</h2>
+        <p>Where everything begins with grounding, not rushing.</p>
+    </div>
+
+    <div class="card">
+        <h2>Grounds</h2>
+        <p>Coffee, laughter, and conversations that stretch time a little.</p>
+    </div>
+
+    <div class="card">
+        <h2>Glimpses</h2>
+        <p>Photos we don’t plan too much—just moments we let happen.</p>
+    </div>
+</section>
+
+<section class="fade">
+    <div class="card">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <div><img src="img/one.jpeg" alt="Memory 01"></div>
+            <div><img src="img/two.jpeg" alt="Memory 02"></div>
+            <div><img src="img/three.jpeg" alt="Memory 03"></div>
+            <div><img src="img/four.jpeg" alt="Memory 04"></div>
+            <div><img src="img/five.jpeg" alt="Memory 05"></div>
+            <div><img src="img/six.jpeg" alt="Memory 06"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+// PASSWORD (clue: Kira-ai)
+function unlock() {
+    const pass = document.getElementById('pass').value.toLowerCase();
+    const correct = "kira-ai";
+
+    if(pass === correct){
+        document.getElementById('lock').style.display = "none";
+    } else {
+        document.getElementById('error').innerText = "Wrong hint… think softer.";
+    }
+}
+
+// COUNTDOWN
+const targetDate = new Date("July 12, 2026 00:00:00").getTime();
+
+const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    if(distance < 0){
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "Today is the day.";
+    }
+}, 1000);
+
+// SCROLL FADE
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
